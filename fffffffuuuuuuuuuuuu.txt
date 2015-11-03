@@ -1,0 +1,7 @@
+fffffffffffffffffffffffuuuuuuuuuuuuuuuuuuuuuu
+f23u22
+f7u12
+
+https://github.com/google/google-api-python-client/blob/master/samples/customsearch/main.py
+
+https://developers.google.com/custom-search/json-api/v1/overview
