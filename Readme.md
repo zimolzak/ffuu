@@ -14,6 +14,10 @@ live data, rather than `fake.py` creating the CSV from static data.
 Once my quota renews :). `main.py` will have to be rewritten a little
 to print an "unrolled" rather than square matrix (easy).
 
+Example
+--------
+![Map of Fs versus Us](https://dl.dropboxusercontent.com/u/38640281/github_img/ffuu_map.png)
+
 
 Admin boringness/links
 --------
