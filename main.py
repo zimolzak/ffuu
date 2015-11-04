@@ -20,6 +20,7 @@ Command-line application that does a search.
 """
 
 import pprint
+import pdb
 
 from googleapiclient.discovery import build
 
@@ -29,6 +30,7 @@ def main():
   # Build a service object for interacting with the API. Visit
   # the Google APIs Console <http://code.google.com/apis/console>
   # to get an API key for your own application.
+#  pdb.set_trace()
   service = build("customsearch", "v1",
             developerKey=mykey)
 
