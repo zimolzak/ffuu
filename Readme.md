@@ -9,6 +9,11 @@ f23u22. Somehow f7u12 got promulgated too. Others are pretty easy to
 type. So construct a matrix where the (i,j) element is the search
 count of "F" repeated i times concatenated with "U" repeated j times.
 
+**To do:** Change the makefile so that `main.py` creates the CSV from
+live data, rather than `fake.py` creating the CSV from static data.
+Once my quota renews :). `main.py` will have to be rewritten a little
+to print an "unrolled" rather than square matrix (easy).
+
 
 Admin boringness/links
 --------
@@ -20,7 +25,7 @@ https://developers.google.com/console/help/new/?hl=en_US#apikeybestpractices
 Documentation for customsearch API:
 https://developers.google.com/resources/api-libraries/documentation/customsearch/v1/python/latest/
 
-This documentation reveals that x.cse().list(...) are the only
+This documentation reveals that `x.cse().list(...)` are the only
 instance methods you can call.
 
 Sample code:
