@@ -6,7 +6,7 @@ M = [[711000, 56600, 7290],
      [20800, 636, 623],
      [392, 253, 1480]]
 
-from fu_utilities import matrix2csv
-
-print ','.join(map(lambda x: "u"+str(x.count('u')), T[0])) # header row 1,2,3,...
-print matrix2csv(M)
+print "Fs,Us,count"
+for i in range(len(M)):
+    for j in range(len(M[i])):
+        print str(i+1) + "," + str(j+1) + "," + str(M[i][j])
