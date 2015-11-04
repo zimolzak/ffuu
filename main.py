@@ -32,18 +32,11 @@ for i in range(n):
     T.append([])
     for j in range(n):
         query = ("f" * (i+1)) + ("u" * (j+1))
+        # fixme - print M if error in next line so we don't lose queries
         res = service.cse().list(q=query, cx=mycx).execute()
         c = int(res['searchInformation']['totalResults'])
         M[i].append(c)
         T[i].append(query)
 
-# T = [['fu', 'fuu', 'fuuu'],
-#      ['ffu', 'ffuu', 'ffuuu'],
-#      ['fffu', 'fffuu', 'fffuuu']]
-
-# M = [[711000, 56600, 7290], 
-#      [20800, 636, 623],
-#      [392, 253, 1480]]
-
-print ','.join(map(lambda x: "u"+str(x.count('u')), T[0])) # header row 1,2,3,...
+print ','.join(map(lambda x: "u"+str(x.count('u')), T[0])) # header 1,2,3,...
 print matrix2csv(M)
