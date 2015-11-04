@@ -9,15 +9,7 @@
 #
 #      http://www.apache.org/licenses/LICENSE-2.0
 
-"""What is more common: FFFFUUUU, or FFUUUUU, or FFFFFUUU, etc.?
-
-http://code.google.com/apis/console to get API key for your app.
-
-Documentation for customsearch API:
-https://developers.google.com/resources/api-libraries/documentation/customsearch/v1/python/latest/
-
-x.cse().list(...) are the only instance methods you can call.
-"""
+"""What is more common: FFFFUUUU, or FFUUUUU, or FFFFFUUU, etc.?"""
 
 import pdb
 from googleapiclient.discovery import build
