@@ -5,7 +5,7 @@ What is more common: FFFFUUUU, or FFUUUUU, or FFFFFUUU, etc.?
 
 The original comic uses the text
 "FFFFFFFFFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUU-", which is to say,
-f23u22. Somehow f7u12 got promulgated too. But others variations are
+f23u22. Somehow f7u12 got promulgated too. But other variations are
 probably easier to type. So use Google Custom Search API to construct
 a matrix where the (i,j) element is the search count of "F" repeated i
 times concatenated with "U" repeated j times.
