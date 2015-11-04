@@ -18,13 +18,18 @@ mycx = '001893756405173909803:zmyrda2qwcc'
 service = build("customsearch", "v1", developerKey=mykey)
 
 n = 3 # Max number of Fs or Us.
-M = [[None] * (n+1)] * (n+1)
+M = []
+T = []
 
-for i in range(1, n+1):
-    for j in range(1, n+1):
-        query = ("f" * i) + ("u" * j)
+for i in range(n):
+    M.append([])
+    T.append([])
+    for j in range(n):
+        query = ("f" * (i+1)) + ("u" * (j+1))
         res = service.cse().list(q=query, cx=mycx).execute()
         c = int(res['searchInformation']['totalResults'])
-        M[i][j] = c
+        M[i].append(c)
+        T[i].append(query)
 
 print M
+print T
