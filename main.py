@@ -22,7 +22,10 @@ x.cse().list(...) are the only instance methods you can call.
 import pdb
 from googleapiclient.discovery import build
 mykey = open('apikey.txt', 'r').read().splitlines()[0]
+mycx = '001893756405173909803:zmyrda2qwcc'
 service = build("customsearch", "v1", developerKey=mykey)
-res = service.cse().list(q='ffffuuuu',
-    cx='001893756405173909803:zmyrda2qwcc').execute()
-print int(res['searchInformation']['totalResults'])
+
+for query in ['ffffuuuu', 'fffuuu']:
+  res = service.cse().list(q=query, cx=mycx).execute()
+  c = int(res['searchInformation']['totalResults'])
+  print query + ', ' + str(c)
