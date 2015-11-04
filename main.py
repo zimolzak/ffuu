@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright 2014 Google Inc. All Rights Reserved.
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -17,9 +15,12 @@ mykey = open('apikey.txt', 'r').read().splitlines()[0]
 mycx = '001893756405173909803:zmyrda2qwcc'
 service = build("customsearch", "v1", developerKey=mykey)
 
-n = 3 # Max number of Fs or Us.
+n = 24 # Max number of Fs or Us.
 M = []
 T = []
+
+def matrix2csv(matrix):
+    return '\n'.join(map(lambda x: ','.join(map(str, x)), matrix))
 
 for i in range(n):
     M.append([])
@@ -31,5 +32,13 @@ for i in range(n):
         M[i].append(c)
         T[i].append(query)
 
-print M
-print T
+# T = [['fu', 'fuu', 'fuuu'],
+#      ['ffu', 'ffuu', 'ffuuu'],
+#      ['fffu', 'fffuu', 'fffuuu']]
+
+# M = [[711000, 56600, 7290], 
+#      [20800, 636, 623],
+#      [392, 253, 1480]]
+
+print ','.join(map(lambda x: "u"+str(x.count('u')), T[0])) # header row 1,2,3,...
+print matrix2csv(M)
