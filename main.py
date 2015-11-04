@@ -19,26 +19,26 @@
 Command-line application that does a search.
 """
 
-import pprint
 import pdb
-
 from googleapiclient.discovery import build
 
+# http://code.google.com/apis/console to get API key for your app.
 mykey = open('apikey.txt', 'r').read().splitlines()[0]
 
 def main():
-  # Build a service object for interacting with the API. Visit
-  # the Google APIs Console <http://code.google.com/apis/console>
-  # to get an API key for your own application.
-#  pdb.set_trace()
+  # Documentation for customsearch API:
+  # https://developers.google.com/resources/api-libraries/documentation/customsearch/v1/python/latest/
   service = build("customsearch", "v1",
             developerKey=mykey)
-
-  res = service.cse().list(
-      q='lectures',
-      cx='017576662512468239146:omuauf_lfve',
+  #pdb.set_trace()
+  # x.cse().list(...) are the only instance methods you can call.
+  res = service.cse().list( 
+      q='ffffuuuu',
+      cx='001893756405173909803:zmyrda2qwcc',
+      # custom search engine ID. This is CS curriculum.
+      # https://cse.google.com/cse/publicurl?cx=017576662512468239146:omuauf_lfve
     ).execute()
-  pprint.pprint(res)
+  print int(res['searchInformation']['totalResults'])
 
 if __name__ == '__main__':
   main()
