@@ -11,6 +11,7 @@
 
 import pdb
 from googleapiclient.discovery import build
+from fu_utilities import matrix2csv
 mykey = open('apikey.txt', 'r').read().splitlines()[0]
 mycx = '001893756405173909803:zmyrda2qwcc'
 service = build("customsearch", "v1", developerKey=mykey)
@@ -18,9 +19,6 @@ service = build("customsearch", "v1", developerKey=mykey)
 n = 24 # Max number of Fs or Us.
 M = []
 T = []
-
-def matrix2csv(matrix):
-    return '\n'.join(map(lambda x: ','.join(map(str, x)), matrix))
 
 for i in range(n):
     M.append([])
