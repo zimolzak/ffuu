@@ -17,7 +17,19 @@ mykey = open('apikey.txt', 'r').read().splitlines()[0]
 mycx = '001893756405173909803:zmyrda2qwcc'
 service = build("customsearch", "v1", developerKey=mykey)
 
-for query in ['ffffuuuu', 'fffuuu']:
-  res = service.cse().list(q=query, cx=mycx).execute()
-  c = int(res['searchInformation']['totalResults'])
-  print query + ', ' + str(c)
+n = 3 # Max number of Fs or Us.
+M = []
+T = []
+
+for i in range(n):
+    M.append([])
+    T.append([])
+    for j in range(n):
+        query = ("f" * (i+1)) + ("u" * (j+1))
+        res = service.cse().list(q=query, cx=mycx).execute()
+        c = int(res['searchInformation']['totalResults'])
+        M[i].append(c)
+        T[i].append(query)
+
+print M
+print T
