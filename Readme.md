@@ -12,14 +12,25 @@ times concatenated with "U" repeated j times.
 
 Partially inspired by: https://xkcd.com/467/
 
-**To do:** Change the makefile so that `main.py` creates the CSV from
-live data, rather than `fake.py` creating the CSV from static data.
-Once my quota renews :). `main.py` will also have to be rewritten a
-little to print an "unrolled" rather than square matrix (easy).
-
 Example
 --------
 ![Map of Fs versus Us](https://dl.dropboxusercontent.com/u/38640281/github_img/ffuu_map.png)
+
+To do
+--------
+* Change the makefile so that `main.py` creates the CSV from
+live data, rather than `fake.py` creating the CSV from static data.
+Once my quota renews :). 
+
+* `main.py` will also have to be rewritten a little to print an
+"unrolled" rather than square matrix (easy).
+
+* Go to Google custom search settings and switch it to "search whole
+web with emphasis on these sites" or whatever that setting is called.
+
+* If there's any error in `execute()` method (such as 403, quota
+exceeded, etc.), then fail gracefully and report back any
+already-stored data that we paid quota for!
 
 Usage
 --------
