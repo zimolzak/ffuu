@@ -1,7 +1,6 @@
 *~
 *.pyc
 apikey.txt
-*.csv
 *.png
 *.pdf
 .Rapp.history

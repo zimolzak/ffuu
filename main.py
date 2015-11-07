@@ -20,23 +20,14 @@ import pdb
 from googleapiclient.discovery import build
 from fu_utilities import matrix2csv
 mykey = open('apikey.txt', 'r').read().splitlines()[0]
-mycx = '001893756405173909803:zmyrda2qwcc' # knowyourmeme + cheezburger + reddit
+mycx = '001893756405173909803:zmyrda2qwcc' #knowyourmeme + cheezburger + reddit
 service = build("customsearch", "v1", developerKey=mykey)
 
-n = 24 # Max number of Fs or Us.
-M = []
-T = []
+print "Fs,Us,count" #csv header
 
-for i in range(n):
-    M.append([])
-    T.append([])
-    for j in range(n):
-        query = ("f" * (i+1)) + ("u" * (j+1))
-        # fixme - print M if error in next line so we don't lose queries
+for fs in range(1,8):
+    for us in range(1,13):
+        query = ("f" * fs) + ("u" * us)
         res = service.cse().list(q=query, cx=mycx).execute()
         c = int(res['searchInformation']['totalResults'])
-        M[i].append(c)
-        T[i].append(query)
-
-print ','.join(map(lambda x: "u"+str(x.count('u')), T[0])) # header 1,2,3,...
-print matrix2csv(M)
+        print str(fs) + "," + str(us) + "," + str(c)
