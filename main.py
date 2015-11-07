@@ -16,9 +16,7 @@
 
 """What is more common: FFFFUUUU, or FFUUUUU, or FFFFFUUU, etc.?"""
 
-import pdb
 from googleapiclient.discovery import build
-from fu_utilities import matrix2csv
 mykey = open('apikey.txt', 'r').read().splitlines()[0]
 mycx = '001893756405173909803:zmyrda2qwcc' #knowyourmeme + cheezburger + reddit
 service = build("customsearch", "v1", developerKey=mykey)
@@ -29,5 +27,5 @@ for fs in range(1,8):
     for us in range(1,13):
         query = ("f" * fs) + ("u" * us)
         res = service.cse().list(q=query, cx=mycx).execute()
-        c = int(res['searchInformation']['totalResults'])
-        print str(fs) + "," + str(us) + "," + str(c)
+        c = res['searchInformation']['totalResults']
+        print str(fs) + "," + str(us) + "," + c
