@@ -20,6 +20,18 @@ To do
 --------
 * Extend out to about 23 x 23. Maybe I will pay 5 bucks to Google.
 
+* Command line switches. Turn off header row if it looks like we're
+  not on day 1.
+
+* Current flow for day 2 as follows:
+
+    ./main.py > f8_15u1_12.csv
+    tail -n 96 f8_15u1_12.csv > tail.csv
+    mv out.csv f1_7u1_12.csv
+    cat f1_7u1_12.csv tail.csv > out.csv
+    ./plot.R
+
+
 Usage
 --------
 

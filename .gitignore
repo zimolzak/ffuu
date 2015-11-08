@@ -4,3 +4,5 @@ apikey.txt
 *.png
 *.pdf
 .Rapp.history
+*.csv
+!out.csv
