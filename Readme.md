@@ -25,11 +25,15 @@ To do
 
 * Current flow for day 2 as follows:
 
-    ./main.py > f8_15u1_12.csv
-    tail -n 96 f8_15u1_12.csv > tail.csv
-    mv out.csv f1_7u1_12.csv
-    cat f1_7u1_12.csv tail.csv > out.csv
-    ./plot.R
+`./main.py > f8_15u1_12.csv`
+
+`tail -n 96 f8_15u1_12.csv > tail.csv`
+
+`mv out.csv f1_7u1_12.csv`
+
+`cat f1_7u1_12.csv tail.csv > out.csv`
+
+`./plot.R`
 
 
 Usage
