@@ -25,8 +25,8 @@ service = build("customsearch", "v1", developerKey=mykey)
 
 #print "Fs,Us,count" #csv header
 
-for fs in range(16,21): # goal 23
-    for us in range(1,19): # goal 23
+for fs in range(1,21): # goal 23
+    for us in range(18,23): # goal 23
         query = ("f" * fs) + ("u" * us)
         res = service.cse().list(q=query, cx=mycx).execute()
         c = res['searchInformation']['totalResults']
